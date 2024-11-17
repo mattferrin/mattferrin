@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matt Ferrin</title>
+  </head>
+  <body>
+    <!-- Inline SVG -->
+    <svg
+      aria-roledescription="flowchart-v2"
+      role="graphics-document document"
+      viewBox="0 0 2541.359375 2396.5"
+      style="max-width: 2541.36px; background-color: white"
+      class="flowchart"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      id="my-svg"
+    >
+      <style>
+        #my-svg {
+          font-family: "trebuchet ms", verdana, arial, sans-serif;
+          font-size: 16px;
+          fill: #333;
+        }
+        #my-svg .error-icon {
+          fill: #552222;
+        }
+        #my-svg .error-text {
+          fill: #552222;
+          stroke: #552222;
+        }
+        #my-svg .edge-thickness-normal {
+          stroke-width: 1px;
+        }
+        #my-svg .edge-thickness-thick {
+          stroke-width: 3.5px;
+        }
+        #my-svg .edge-pattern-solid {
+          stroke-dasharray: 0;
+        }
+        #my-svg .edge-thickness-invisible {
+          stroke-width: 0;
+          fill: none;
+        }
+        #my-svg .edge-pattern-dashed {
+          stroke-dasharray: 3;
+        }
+        #my-svg .edge-pattern-dotted {
+          stroke-dasharray: 2;
+        }
+        #my-svg .marker {
+          fill: #333333;
+          stroke: #333333;
+        }
+        #my-svg .marker.cross {
+          stroke: #333333;
+        }
+        #my-svg svg {
+          font-family: "trebuchet ms", verdana, arial, sans-serif;
+          font-size: 16px;
+        }
+        #my-svg p {
+          margin: 0;
+        }
+        #my-svg .label {
+          font-family: "trebuchet ms", verdana, arial, sans-serif;
+          color: #333;
+        }
+        #my-svg .cluster-label text {
+          fill: #333;
+        }
+        #my-svg .cluster-label span {
+          color: #333;
+        }
+        #my-svg .cluster-label span p {
+          background-color: transparent;
+        }
+        #my-svg .label text,
+        #my-svg span {
+          fill: #333;
+          color: #333;
+        }
+        #my-svg .node rect,
+        #my-svg .node circle,
+        #my-svg .node ellipse,
+        #my-svg .node polygon,
+        #my-svg .node path {
+          fill: #ececff;
+          stroke: #9370db;
+          stroke-width: 1px;
+        }
+        #my-svg .rough-node .label text,
+        #my-svg .node .label text,
+        #my-svg .image-shape .label,
+        #my-svg .icon-shape .label {
+          text-anchor: middle;
+        }
+        #my-svg .node .katex path {
+          fill: #000;
+          stroke: #000;
+          stroke-width: 1px;
+        }
+        #my-svg .rough-node .label,
+        #my-svg .node .label,
+        #my-svg .image-shape .label,
+        #my-svg .icon-shape .label {
+          text-align: center;
+        }
+        #my-svg .node.clickable {
+          cursor: pointer;
+        }
+        #my-svg .root .anchor path {
+          fill: #333333 !important;
+          stroke-width: 0;
+          stroke: #333333;
+        }
+        #my-svg .arrowheadPath {
+          fill: #333333;
+        }
+        #my-svg .edgePath .path {
+          stroke: #333333;
+          stroke-width: 2px;
+        }
+        #my-svg .flowchart-link {
+          stroke: #333333;
+          fill: none;
+        }
+        #my-svg .edgeLabel {
+          background-color: rgba(232, 232, 232, 0.8);
+          text-align: center;
+        }
+        #my-svg .edgeLabel p {
+          background-color: rgba(232, 232, 232, 0.8);
+        }
+        #my-svg .edgeLabel rect {
+          opacity: 0.5;
+          background-color: rgba(232, 232, 232, 0.8);
+          fill: rgba(232, 232, 232, 0.8);
+        }
+        #my-svg .labelBkg {
+          background-color: rgba(232, 232, 232, 0.5);
+        }
+        #my-svg .cluster rect {
+          fill: #ffffde;
+          stroke: #aaaa33;
+          stroke-width: 1px;
+        }
+        #my-svg .cluster text {
+          fill: #333;
+        }
+        #my-svg .cluster span {
+          color: #333;
+        }
+        #my-svg div.mermaidTooltip {
+          position: absolute;
+          text-align: center;
+          max-width: 200px;
+          padding: 2px;
+          font-family: "trebuchet ms", verdana, arial, sans-serif;
+          font-size: 12px;
+          background: hsl(80, 100%, 96.2745098039%);
+          border: 1px solid #aaaa33;
+          border-radius: 2px;
+          pointer-events: none;
+          z-index: 100;
+        }
+        #my-svg .flowchartTitleText {
+          text-anchor: middle;
+          font-size: 18px;
+          fill: #333;
+        }
+        #my-svg rect.text {
+          fill: none;
+          stroke-width: 0;
+        }
+        #my-svg .icon-shape,
+        #my-svg .image-shape {
+          background-color: rgba(232, 232, 232, 0.8);
+          text-align: center;
+        }
+        #my-svg .icon-shape p,
+        #my-svg .image-shape p {
+          background-color: rgba(232, 232, 232, 0.8);
+          padding: 2px;
+        }
+        #my-svg .icon-shape rect,
+        #my-svg .image-shape rect {
+          opacity: 0.5;
+          background-color: rgba(232, 232, 232, 0.8);
+          fill: rgba(232, 232, 232, 0.8);
+        }
+        #my-svg :root {
+          --mermaid-font-family: "trebuchet ms", verdana, arial, sans-serif;
+        }
+      </style>
+      <g>
+        <marker
+          orient="auto"
+          markerHeight="8"
+          markerWidth="8"
+          markerUnits="userSpaceOnUse"
+          refY="5"
+          refX="5"
+          viewBox="0 0 10 10"
+          class="marker flowchart-v2"
+          id="my-svg_flowchart-v2-pointEnd"
+        >
+          <path
+            style="stroke-width: 1; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            d="M 0 0 L 10 5 L 0 10 z"
+          />
+        </marker>
+        <marker
+          orient="auto"
+          markerHeight="8"
+          markerWidth="8"
+          markerUnits="userSpaceOnUse"
+          refY="5"
+          refX="4.5"
+          viewBox="0 0 10 10"
+          class="marker flowchart-v2"
+          id="my-svg_flowchart-v2-pointStart"
+        >
+          <path
+            style="stroke-width: 1; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            d="M 0 5 L 10 10 L 10 0 z"
+          />
+        </marker>
+        <marker
+          orient="auto"
+          markerHeight="11"
+          markerWidth="11"
+          markerUnits="userSpaceOnUse"
+          refY="5"
+          refX="11"
+          viewBox="0 0 10 10"
+          class="marker flowchart-v2"
+          id="my-svg_flowchart-v2-circleEnd"
+        >
+          <circle
+            style="stroke-width: 1; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            r="5"
+            cy="5"
+            cx="5"
+          />
+        </marker>
+        <marker
+          orient="auto"
+          markerHeight="11"
+          markerWidth="11"
+          markerUnits="userSpaceOnUse"
+          refY="5"
+          refX="-1"
+          viewBox="0 0 10 10"
+          class="marker flowchart-v2"
+          id="my-svg_flowchart-v2-circleStart"
+        >
+          <circle
+            style="stroke-width: 1; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            r="5"
+            cy="5"
+            cx="5"
+          />
+        </marker>
+        <marker
+          orient="auto"
+          markerHeight="11"
+          markerWidth="11"
+          markerUnits="userSpaceOnUse"
+          refY="5.2"
+          refX="12"
+          viewBox="0 0 11 11"
+          class="marker cross flowchart-v2"
+          id="my-svg_flowchart-v2-crossEnd"
+        >
+          <path
+            style="stroke-width: 2; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            d="M 1,1 l 9,9 M 10,1 l -9,9"
+          />
+        </marker>
+        <marker
+          orient="auto"
+          markerHeight="11"
+          markerWidth="11"
+          markerUnits="userSpaceOnUse"
+          refY="5.2"
+          refX="-1"
+          viewBox="0 0 11 11"
+          class="marker cross flowchart-v2"
+          id="my-svg_flowchart-v2-crossStart"
+        >
+          <path
+            style="stroke-width: 2; stroke-dasharray: 1, 0"
+            class="arrowMarkerPath"
+            d="M 1,1 l 9,9 M 10,1 l -9,9"
+          />
+        </marker>
+        <g class="root">
+          <g class="clusters" />
+          <g class="edgePaths" />
+          <g class="edgeLabels" />
+          <g class="nodes">
+            <g transform="translate(0, 0)" class="root">
+              <g class="clusters">
+                <g data-look="classic" id="subGraph8" class="cluster">
+                  <rect
+                    height="2380.5"
+                    width="2525.359375"
+                    y="8"
+                    x="8"
+                    style=""
+                  />
+                  <g
+                    transform="translate(1221.0078125, 8)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="99.34375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"><p>Detailed View</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph7" class="cluster">
+                  <rect
+                    height="708"
+                    width="711.16796875"
+                    y="45.5"
+                    x="901.6796875"
+                    style=""
+                  />
+                  <g
+                    transform="translate(1157.263671875, 45.5)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="72" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>
+                            Higher-Order Token Generation (Single Point Path)
+                          </p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph6" class="cluster">
+                  <rect
+                    height="784.5"
+                    width="2485.359375"
+                    y="1413.5"
+                    x="28"
+                    style=""
+                  />
+                  <g
+                    transform="translate(1179.34375, 1413.5)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="182.671875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Ingestion Point (Detailed)</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph1" class="cluster">
+                  <rect
+                    height="282"
+                    width="642.5390625"
+                    y="1032.5"
+                    x="727.78125"
+                    style=""
+                  />
+                  <g
+                    transform="translate(974.02734375, 1032.5)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="150.046875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Token Instance Types</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph0" class="cluster">
+                  <rect
+                    height="129"
+                    width="603.515625"
+                    y="828.5"
+                    x="754.67578125"
+                    style=""
+                  />
+                  <g
+                    transform="translate(1006.12890625, 828.5)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="100.609375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"><p>Token Sources</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph5" class="cluster">
+                  <rect
+                    height="571.5"
+                    width="541.421875"
+                    y="1589"
+                    x="1951.9375"
+                    style=""
+                  />
+                  <g
+                    transform="translate(2145.0625, 1589)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="155.171875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Sphere Surface Points</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph4" class="cluster">
+                  <rect
+                    height="381"
+                    width="1883.9375"
+                    y="1779.5"
+                    x="48"
+                    style=""
+                  />
+                  <g
+                    transform="translate(935.4296875, 1779.5)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="24" width="109.078125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"><p>Update Process</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph3" class="cluster">
+                  <rect
+                    height="153"
+                    width="1183.9375"
+                    y="1970"
+                    x="728"
+                    style=""
+                  />
+                  <g
+                    transform="translate(1219.96875, 1970)"
+                    class="cluster-label"
+                  >
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Type-Specific Updates (Sphere Surface)</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g data-look="classic" id="subGraph2" class="cluster">
+                  <rect height="153" width="640" y="1970" x="68" style="" />
+                  <g transform="translate(288, 1970)" class="cluster-label">
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Cross-Type Updates (Sphere Surface)</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+              </g>
+              <g class="edgePaths">
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_ExternalSources_Triggerable_0"
+                  d="M861.933,920L852.631,926.25C843.328,932.5,824.723,945,815.42,957.5C806.117,970,806.117,982.5,806.117,995C806.117,1007.5,806.117,1020,814.894,1034.057C823.671,1048.114,841.224,1063.728,850.001,1071.535L858.778,1079.342"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_ExternalSources_NonTriggerable_1"
+                  d="M906.911,920L908.019,926.25C909.128,932.5,911.345,945,912.454,957.5C913.563,970,913.563,982.5,913.563,995C913.563,1007.5,913.563,1020,939.637,1033.121C965.712,1046.242,1017.861,1059.983,1043.936,1066.854L1070.011,1073.725"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_HigherOrderSources_Triggerable_2"
+                  d="M1068.165,920L1039.065,926.25C1009.964,932.5,951.763,945,922.663,957.5C893.563,970,893.563,982.5,893.563,995C893.563,1007.5,893.563,1020,893.42,1033.833C893.277,1047.667,892.991,1062.834,892.848,1070.417L892.705,1078.001"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_HigherOrderSources_NonTriggerable_3"
+                  d="M1198.668,920L1199.777,926.25C1200.886,932.5,1203.103,945,1204.212,957.5C1205.32,970,1205.32,982.5,1205.32,995C1205.32,1007.5,1205.32,1020,1205.215,1031.833C1205.11,1043.667,1204.9,1054.834,1204.794,1060.417L1204.689,1066.001"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_Triggerable_Suppressible_4"
+                  d="M841.418,1136L825.925,1144.25C810.432,1152.5,779.446,1169,775.483,1183.194C771.52,1197.389,794.58,1209.278,806.109,1215.222L817.639,1221.167"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_Triggerable_NonSuppressible_5"
+                  d="M892.63,1136L892.785,1144.25C892.941,1152.5,893.252,1169,923.58,1183.492C953.908,1197.985,1014.253,1210.47,1044.426,1216.712L1074.599,1222.955"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NonTriggerable_Suppressible_6"
+                  d="M1073.879,1139.107L1040.493,1146.84C1007.107,1154.572,940.335,1170.036,906.949,1183.351C873.563,1196.667,873.563,1207.833,873.563,1213.417L873.563,1219"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NonTriggerable_NonSuppressible_7"
+                  d="M1204.614,1148L1204.732,1154.25C1204.849,1160.5,1205.085,1173,1205.203,1184.833C1205.32,1196.667,1205.32,1207.833,1205.32,1213.417L1205.32,1219"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_TokenCheck_CreateToken_8"
+                  d="M1128.442,1475.693L1310.922,1486.328C1493.402,1496.962,1858.361,1518.231,2040.841,1537.116C2223.32,1556,2223.32,1572.5,2223.32,1586.333C2223.32,1600.167,2223.32,1611.333,2223.32,1616.917L2223.32,1622.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_TokenCheck_UpdateTokenType_9"
+                  d="M1048.5,1490.5L1048.417,1498.667C1048.333,1506.833,1048.167,1523.167,1048.083,1539.583C1048,1556,1048,1572.5,1048,1591.5C1048,1610.5,1048,1632,1048,1655.5C1048,1679,1048,1704.5,1048,1725.5C1048,1746.5,1048,1763,1048,1776.833C1048,1790.667,1048,1801.833,1048,1807.417L1048,1813"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_CrossTypeP_10"
+                  d="M954.961,1852.733L834.634,1864.028C714.307,1875.322,473.654,1897.911,353.327,1917.456C233,1937,233,1953.5,233,1967.333C233,1981.167,233,1992.333,233,1997.917L233,2003.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_CrossTypeE_11"
+                  d="M954.961,1858.094L886.301,1868.495C817.641,1878.896,680.32,1899.698,611.66,1918.349C543,1937,543,1953.5,543,1967.333C543,1981.167,543,1992.333,543,1997.917L543,2003.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_TypeSpecificP_12"
+                  d="M993.294,1871L976.578,1879.25C959.863,1887.5,926.431,1904,909.716,1920.5C893,1937,893,1953.5,893,1967.333C893,1981.167,893,1992.333,893,1997.917L893,2003.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_TypeSpecificE_13"
+                  d="M1102.706,1871L1119.422,1879.25C1136.137,1887.5,1169.569,1904,1186.284,1920.5C1203,1937,1203,1953.5,1203,1967.333C1203,1981.167,1203,1992.333,1203,1997.917L1203,2003.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_PursuerPoints_14"
+                  d="M1141.039,1863.79L1185.474,1873.242C1229.909,1882.693,1318.779,1901.597,1363.214,1919.298C1407.648,1937,1407.648,1953.5,1416.602,1969.562C1425.555,1985.623,1443.462,2001.247,1452.415,2009.059L1461.368,2016.87"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_UpdateTokenType_EvaderPoints_15"
+                  d="M1141.039,1853.895L1245.415,1864.996C1349.792,1876.097,1558.544,1898.298,1662.921,1917.649C1767.297,1937,1767.297,1953.5,1767.297,1969.333C1767.297,1985.167,1767.297,2000.333,1767.297,2007.917L1767.297,2015.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_CreateToken_SphereCreate_16"
+                  d="M2223.32,1680.5L2223.32,1688.75C2223.32,1697,2223.32,1713.5,2223.32,1730C2223.32,1746.5,2223.32,1763,2223.32,1776.833C2223.32,1790.667,2223.32,1801.833,2223.32,1807.417L2223.32,1813"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_SphereCreate_NewPursuerPoint_17"
+                  d="M2179.222,1871L2165.747,1879.25C2152.273,1887.5,2125.324,1904,2111.849,1920.5C2098.375,1937,2098.375,1953.5,2098.375,1969.333C2098.375,1985.167,2098.375,2000.333,2098.375,2007.917L2098.375,2015.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_SphereCreate_NewEvaderPoint_18"
+                  d="M2267.419,1871L2280.893,1879.25C2294.368,1887.5,2321.317,1904,2334.791,1920.5C2348.266,1937,2348.266,1953.5,2348.266,1969.333C2348.266,1985.167,2348.266,2000.333,2348.266,2007.917L2348.266,2015.5"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_Suppressible_TokenCheck_19"
+                  d="M873.563,1277L873.563,1283.25C873.563,1289.5,873.563,1302,873.563,1316.5C873.563,1331,873.563,1347.5,873.563,1364C873.563,1380.5,873.563,1397,892.14,1411.375C910.717,1425.749,947.871,1437.998,966.448,1444.123L985.025,1450.248"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NonSuppressible_TokenCheck_20"
+                  d="M1205.32,1277L1205.32,1283.25C1205.32,1289.5,1205.32,1302,1205.32,1316.5C1205.32,1331,1205.32,1347.5,1205.32,1364C1205.32,1380.5,1205.32,1397,1188.779,1411.353C1172.238,1425.705,1139.155,1437.91,1122.614,1444.013L1106.073,1450.115"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_CrossTypeP_CrossTypeDB_21"
+                  d="M233,2085.5L233,2091.75C233,2098,233,2110.5,233,2123C233,2135.5,233,2148,233,2160.5C233,2173,233,2185.5,233,2200C233,2214.5,233,2231,243.274,2247.095C253.548,2263.191,274.095,2278.882,284.369,2286.727L294.643,2294.572"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_CrossTypeE_CrossTypeDB_22"
+                  d="M543,2085.5L543,2091.75C543,2098,543,2110.5,543,2123C543,2135.5,543,2148,543,2160.5C543,2173,543,2185.5,543,2200C543,2214.5,543,2231,520.999,2247.272C498.997,2263.543,454.995,2279.587,432.993,2287.608L410.992,2295.63"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_TypeSpecificP_TypeSpecificDB_23"
+                  d="M893,2085.5L893,2091.75C893,2098,893,2110.5,893,2123C893,2135.5,893,2148,893,2160.5C893,2173,893,2185.5,893,2200C893,2214.5,893,2231,996.606,2249.985C1100.213,2268.97,1307.426,2290.441,1411.032,2301.176L1514.638,2311.911"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_TypeSpecificE_TypeSpecificDB_24"
+                  d="M1203,2085.5L1203,2091.75C1203,2098,1203,2110.5,1203,2123C1203,2135.5,1203,2148,1203,2160.5C1203,2173,1203,2185.5,1203,2200C1203,2214.5,1203,2231,1254.947,2248.528C1306.893,2266.056,1410.786,2284.612,1462.733,2293.89L1514.68,2303.168"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_PursuerPoints_TypeSpecificDB_25"
+                  d="M1495.328,2073.5L1495.328,2081.75C1495.328,2090,1495.328,2106.5,1495.328,2121C1495.328,2135.5,1495.328,2148,1495.328,2160.5C1495.328,2173,1495.328,2185.5,1495.328,2200C1495.328,2214.5,1495.328,2231,1509.412,2247.173C1523.496,2263.346,1551.664,2279.193,1565.748,2287.116L1579.832,2295.039"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_EvaderPoints_TypeSpecificDB_26"
+                  d="M1767.297,2073.5L1767.297,2081.75C1767.297,2090,1767.297,2106.5,1767.297,2121C1767.297,2135.5,1767.297,2148,1767.297,2160.5C1767.297,2173,1767.297,2185.5,1767.297,2200C1767.297,2214.5,1767.297,2231,1753.213,2247.173C1739.129,2263.346,1710.961,2279.193,1696.877,2287.116L1682.793,2295.039"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NewPursuerPoint_TypeSpecificDB_27"
+                  d="M2098.375,2073.5L2098.375,2081.75C2098.375,2090,2098.375,2106.5,2098.375,2121C2098.375,2135.5,2098.375,2148,2098.375,2160.5C2098.375,2173,2098.375,2185.5,2098.375,2200C2098.375,2214.5,2098.375,2231,2039.972,2248.816C1981.568,2266.632,1864.762,2285.763,1806.359,2295.329L1747.955,2304.895"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NewEvaderPoint_TypeSpecificDB_28"
+                  d="M2348.266,2073.5L2348.266,2081.75C2348.266,2090,2348.266,2106.5,2348.266,2121C2348.266,2135.5,2348.266,2148,2348.266,2160.5C2348.266,2173,2348.266,2185.5,2348.266,2200C2348.266,2214.5,2348.266,2231,2248.219,2249.925C2148.172,2268.85,1948.079,2290.201,1848.032,2300.876L1747.985,2311.551"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_PursuerPoints_SinglePursuer_29"
+                  d="M1507.414,2019.5L1511.106,2011.25C1514.799,2003,1522.185,1986.5,1525.878,1970C1529.57,1953.5,1529.57,1937,1529.57,1916C1529.57,1895,1529.57,1869.5,1529.57,1846C1529.57,1822.5,1529.57,1801,1529.57,1782C1529.57,1763,1529.57,1746.5,1529.57,1725.5C1529.57,1704.5,1529.57,1679,1529.57,1655.5C1529.57,1632,1529.57,1610.5,1529.57,1591.5C1529.57,1572.5,1529.57,1556,1529.57,1536.25C1529.57,1516.5,1529.57,1493.5,1529.57,1472.5C1529.57,1451.5,1529.57,1432.5,1529.57,1414.75C1529.57,1397,1529.57,1380.5,1529.57,1364C1529.57,1347.5,1529.57,1331,1529.57,1312C1529.57,1293,1529.57,1271.5,1529.57,1250C1529.57,1228.5,1529.57,1207,1529.57,1183.5C1529.57,1160,1529.57,1134.5,1529.57,1109C1529.57,1083.5,1529.57,1058,1529.57,1039C1529.57,1020,1529.57,1007.5,1529.57,995C1529.57,982.5,1529.57,970,1529.57,953C1529.57,936,1529.57,914.5,1529.57,893C1529.57,871.5,1529.57,850,1529.57,833C1529.57,816,1529.57,803.5,1529.57,791C1529.57,778.5,1529.57,766,1529.57,747C1529.57,728,1529.57,702.5,1529.57,675C1529.57,647.5,1529.57,618,1529.57,588.5C1529.57,559,1529.57,529.5,1529.57,500C1529.57,470.5,1529.57,441,1529.57,409.5C1529.57,378,1529.57,344.5,1529.57,309C1529.57,273.5,1529.57,236,1508.223,207.282C1486.877,178.564,1444.183,158.628,1422.836,148.66L1401.489,138.692"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_SinglePursuer_ShiftedPursuer_30"
+                  d="M1295.451,137L1278.522,147.25C1261.593,157.5,1227.736,178,1210.808,197.833C1193.879,217.667,1193.879,236.833,1193.879,246.417L1193.879,256"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_ShiftedPursuer_NearestEvader_31"
+                  d="M1250.051,362L1259.137,370.25C1268.224,378.5,1286.397,395,1295.484,410.833C1304.57,426.667,1304.57,441.833,1304.57,449.417L1304.57,457"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_ShiftedPursuer_HigherToken_32"
+                  d="M1085.851,362L1068.376,370.25C1050.901,378.5,1015.95,395,998.475,418C981,441,981,470.5,981,500C981,529.5,981,559,1000.229,581.744C1019.458,604.488,1057.916,620.476,1077.145,628.47L1096.374,636.464"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_NearestEvader_HigherToken_33"
+                  d="M1304.57,539L1304.57,547.25C1304.57,555.5,1304.57,572,1294.772,588.084C1284.974,604.167,1265.378,619.835,1255.58,627.668L1245.782,635.502"
+                />
+                <path
+                  marker-end="url(#my-svg_flowchart-v2-pointEnd)"
+                  style=""
+                  class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link"
+                  id="L_HigherToken_HigherOrderSources_34"
+                  d="M1193.879,716L1193.879,722.25C1193.879,728.5,1193.879,741,1193.879,753.5C1193.879,766,1193.879,778.5,1193.879,791C1193.879,803.5,1193.879,816,1193.879,827.833C1193.879,839.667,1193.879,850.833,1193.879,856.417L1193.879,862"
+                />
+              </g>
+              <g class="edgeLabels">
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+                <g
+                  transform="translate(2223.3203125, 1539.5)"
+                  class="edgeLabel"
+                >
+                  <g transform="translate(-9.3984375, -12)" class="label">
+                    <foreignObject height="24" width="18.796875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>No</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1048, 1653.5)" class="edgeLabel">
+                  <g transform="translate(-11.328125, -12)" class="label">
+                    <foreignObject height="24" width="22.65625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Yes</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(233, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(543, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(893, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1203, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1407.6484375, 1920.5)"
+                  class="edgeLabel"
+                >
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1767.296875, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-48.484375, -12)" class="label">
+                    <foreignObject height="24" width="96.96875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Update</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(2223.3203125, 1730)" class="edgeLabel">
+                  <g transform="translate(-33.359375, -12)" class="label">
+                    <foreignObject height="24" width="66.71875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Generate</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(2098.375, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-41.9921875, -12)" class="label">
+                    <foreignObject height="24" width="83.984375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Place</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(2348.265625, 1920.5)" class="edgeLabel">
+                  <g transform="translate(-41.9921875, -12)" class="label">
+                    <foreignObject height="24" width="83.984375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Place</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(873.5625, 1364)" class="edgeLabel">
+                  <g transform="translate(-20.234375, -12)" class="label">
+                    <foreignObject height="24" width="40.46875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1205.3203125, 1364)" class="edgeLabel">
+                  <g transform="translate(-20.234375, -12)" class="label">
+                    <foreignObject height="24" width="40.46875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(233, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(543, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(893, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1203, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1495.328125, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1767.296875, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(2098.375, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(2348.265625, 2247.5)" class="edgeLabel">
+                  <g transform="translate(-41.4296875, -12)" class="label">
+                    <foreignObject height="24" width="82.859375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Async Store</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1529.5703125, 1109)" class="edgeLabel">
+                  <g transform="translate(-100, -36)" class="label">
+                    <foreignObject height="72" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"
+                          ><p>
+                            Async Processing of Multiple Points (Showing Single
+                            Point Path)
+                          </p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1193.87890625, 198.5)"
+                  class="edgeLabel"
+                >
+                  <g transform="translate(-100, -24)" class="label">
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"
+                          ><p>Shift Toward Cross-Type Evader ERA</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1304.5703125, 411.5)" class="edgeLabel">
+                  <g transform="translate(-45.2734375, -12)" class="label">
+                    <foreignObject height="24" width="90.546875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Find Nearest</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(981, 500)" class="edgeLabel">
+                  <g transform="translate(-59.3203125, -12)" class="label">
+                    <foreignObject height="24" width="118.640625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Pair to Generate</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g transform="translate(1304.5703125, 588.5)" class="edgeLabel">
+                  <g transform="translate(-59.3203125, -12)" class="label">
+                    <foreignObject height="24" width="118.640625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"><p>Pair to Generate</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g class="edgeLabel">
+                  <g transform="translate(0, 0)" class="label">
+                    <foreignObject height="0" width="0"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        class="labelBkg"
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="edgeLabel"></span></div
+                    ></foreignObject>
+                  </g>
+                </g>
+              </g>
+              <g class="nodes">
+                <g
+                  transform="translate(1340.04296875, 110)"
+                  id="flowchart-SinglePursuer-73"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="202.578125"
+                    y="-27"
+                    x="-101.2890625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-71.2890625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="142.578125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Single Pursuer Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(902.12109375, 893)"
+                  id="flowchart-ExternalSources-0"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="224.890625"
+                    y="-27"
+                    x="-112.4453125"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-82.4453125, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="164.890625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>External Token Sources</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(892.12109375, 1109)"
+                  id="flowchart-Triggerable-2"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="257.15625"
+                    y="-27"
+                    x="-128.578125"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-98.578125, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="197.15625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Triggerable Token Instances</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1203.87890625, 1109)"
+                  id="flowchart-NonTriggerable-3"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Non-Triggerable Token Instances</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1193.87890625, 893)"
+                  id="flowchart-HigherOrderSources-1"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="258.625"
+                    y="-27"
+                    x="-129.3125"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-99.3125, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="198.625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Higher-Order Token Sources</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(873.5625, 1250)"
+                  id="flowchart-Suppressible-4"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="220.203125"
+                    y="-27"
+                    x="-110.1015625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-80.1015625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="160.203125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Suppressible Instances</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1205.3203125, 1250)"
+                  id="flowchart-NonSuppressible-5"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="253.609375"
+                    y="-27"
+                    x="-126.8046875"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-96.8046875, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="193.609375"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Non-Suppressible Instances</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1048, 1470.5)"
+                  id="flowchart-TokenCheck-18"
+                  class="node default"
+                >
+                  <polygon
+                    transform="translate(-82.2890625,19.5)"
+                    class="label-container"
+                    points="9.75,0 154.828125,0 164.578125,-19.5 154.828125,-39 9.75,-39 0,-19.5"
+                  />
+                  <g
+                    transform="translate(-65.0390625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="130.078125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"><p>Token Type Exists?</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(2223.3203125, 1653.5)"
+                  id="flowchart-CreateToken-19"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="227.125"
+                    y="-27"
+                    x="-113.5625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-83.5625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="167.125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Create New Token Type</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1048, 1844)"
+                  id="flowchart-UpdateTokenType-23"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="186.078125"
+                    y="-27"
+                    x="-93.0390625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-63.0390625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="126.078125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"><p>UpdateTokenType</p></span>
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(233, 2046.5)"
+                  id="flowchart-CrossTypeP-24"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Cross-Type Pursuer ERA Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(543, 2046.5)"
+                  id="flowchart-CrossTypeE-25"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Cross-Type Evader ERA Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(893, 2046.5)"
+                  id="flowchart-TypeSpecificP-26"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Type-Specific Pursuer ERA Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1203, 2046.5)"
+                  id="flowchart-TypeSpecificE-27"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Type-Specific Evader ERA Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1495.328125, 2046.5)"
+                  id="flowchart-PursuerPoints-28"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="224.65625"
+                    y="-27"
+                    x="-112.328125"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-82.328125, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="164.65625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Multiple Pursuer Points</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1767.296875, 2046.5)"
+                  id="flowchart-EvaderPoints-29"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="219.28125"
+                    y="-27"
+                    x="-109.640625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-79.640625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="159.28125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Multiple Evader Points</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(2223.3203125, 1844)"
+                  id="flowchart-SphereCreate-42"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="243.171875"
+                    y="-27"
+                    x="-121.5859375"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-91.5859375, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="183.171875"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Random Point Generation</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(2098.375, 2046.5)"
+                  id="flowchart-NewPursuerPoint-43"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="202.578125"
+                    y="-27"
+                    x="-101.2890625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-71.2890625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="142.578125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Single Pursuer Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(2348.265625, 2046.5)"
+                  id="flowchart-NewEvaderPoint-44"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="197.203125"
+                    y="-27"
+                    x="-98.6015625"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-68.6015625, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="137.203125"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Single Evader Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(333.1796875, 2324)"
+                  id="flowchart-CrossTypeDB-55"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="206.5"
+                    y="-27"
+                    x="-103.25"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-73.25, -12)" style="" class="label">
+                    <rect />
+                    <foreignObject height="24" width="146.5"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Cross-Type Database</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1631.3125, 2324)"
+                  id="flowchart-TypeSpecificDB-56"
+                  class="node default"
+                >
+                  <rect
+                    height="54"
+                    width="225.390625"
+                    y="-27"
+                    x="-112.6953125"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g
+                    transform="translate(-82.6953125, -12)"
+                    style=""
+                    class="label"
+                  >
+                    <rect />
+                    <foreignObject height="24" width="165.390625"
+                      ><div
+                        style="
+                          display: table-cell;
+                          white-space: nowrap;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Type-Specific Database</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1193.87890625, 311)"
+                  id="flowchart-ShiftedPursuer-74"
+                  class="node default"
+                >
+                  <rect
+                    height="102"
+                    width="260"
+                    y="-51"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -36)" style="" class="label">
+                    <rect />
+                    <foreignObject height="72" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>
+                            Single Point Shifted Toward Cross-Type Evader ERA
+                          </p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1304.5703125, 500)"
+                  id="flowchart-NearestEvader-75"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Nearest Different-Type Evader Point</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+                <g
+                  transform="translate(1193.87890625, 677)"
+                  id="flowchart-HigherToken-76"
+                  class="node default"
+                >
+                  <rect
+                    height="78"
+                    width="260"
+                    y="-39"
+                    x="-130"
+                    style=""
+                    class="basic label-container"
+                  />
+                  <g transform="translate(-100, -24)" style="" class="label">
+                    <rect />
+                    <foreignObject height="48" width="200"
+                      ><div
+                        style="
+                          display: table;
+                          white-space: break-spaces;
+                          line-height: 1.5;
+                          max-width: 200px;
+                          text-align: center;
+                          width: 200px;
+                        "
+                        xmlns="http://www.w3.org/1999/xhtml"
+                      >
+                        <span class="nodeLabel"
+                          ><p>Higher-Order Token Instance</p></span
+                        >
+                      </div></foreignObject
+                    >
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  </body>
+</html>
