@@ -239,3 +239,86 @@ graph TD;
 ```
 
 </div>
+
+# Internal Token Formation Process
+
+<div align="center">
+
+```mermaid
+graph TD;
+    ExternalSources["External Token Sources"]
+    InternalSources["Internal Token Sources"]
+    
+    subgraph "Token Ingestion Point"
+        TokenCheck{{"Token Type Exists?"}}
+        UpdateProcess["Update Process"]
+        CreateProcess["Create Process"]
+        
+        TokenCheck -->|Yes| UpdateProcess
+        TokenCheck -->|No| CreateProcess
+    end
+
+    subgraph "Token Formation Control"
+        GetPursuerPoint["Get Pursuer Point"]
+        FindNearestEvader["Find Nearest Different-Type Evader Point"]
+        FormToken["Form Higher-Order Token from Evader and Pursuer Token Types"]
+        
+        UpdateProcess --> GetPursuerPoint
+        GetPursuerPoint --> FindNearestEvader
+        FindNearestEvader --> FormToken
+    end
+
+    TypeSpecificDB[(Type-Specific Database)]
+    
+    ExternalSources --> TokenCheck
+    InternalSources --> TokenCheck
+    GetPursuerPoint -->|Query| TypeSpecificDB
+    FindNearestEvader -->|Query| TypeSpecificDB
+    FormToken -->|Feed Back| InternalSources
+```
+
+</div>
+
+# External Token Triggering and Suppression Process
+
+<div align="center">
+
+```mermaid
+graph TD;
+    ExternalSources["External Token Sources"]
+    
+    subgraph "Token Ingestion Point"
+        TokenCheck{{"Token Type Exists?"}}
+        UpdateProcess["Update Process"]
+        CreateProcess["Create Process"]
+        
+        TokenCheck -->|Yes| UpdateProcess
+        TokenCheck -->|No| CreateProcess
+    end
+
+    subgraph "Token Instance Control"
+        GetEvaderPoint["Get Evader Point"]
+        FindNearestPursuer["Find Nearest Different-Type Pursuer Point"]
+        UndesirabilityCheck{"Pursuer Token Type Undesirability > Threshold?"}
+        DesirabilityCheck{"Pursuer Token Type Desirability > Threshold?"}
+        SuppressToken["Suppress Token Instance Type of Pursuer"]
+        TriggerToken["Trigger Token Instance Type of Pursuer"]
+
+        UpdateProcess --> GetEvaderPoint
+        GetEvaderPoint --> FindNearestPursuer
+        FindNearestPursuer --> UndesirabilityCheck
+        UndesirabilityCheck -->|Yes| SuppressToken
+        UndesirabilityCheck -->|No| DesirabilityCheck
+        DesirabilityCheck -->|Yes| TriggerToken
+    end
+
+    TypeSpecificDB[(Type-Specific Database)]
+    
+    ExternalSources --> TokenCheck
+    GetEvaderPoint -->|Query| TypeSpecificDB
+    FindNearestPursuer -->|Query| TypeSpecificDB
+    SuppressToken -->|Feedback| ExternalSources
+    TriggerToken -->|Feedback| ExternalSources
+```
+
+</div>
