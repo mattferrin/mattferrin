@@ -49,23 +49,23 @@ graph TD;
             SphereCreate -->|Place| NewPursuerPoint
             SphereCreate -->|Place| NewEvaderPoint
 
-            CreateCrossEvaderERA["Create Cross-Type Evader ERA Point"]
+            CreateCrossEvaderEMA["Create Cross-Type Evader EMA Point"]
             SetCrossEvaderLocation["Set Location = Evader Point"]
-            CreateCrossPursuerERA["Create Cross-Type Pursuer ERA Point"]
+            CreateCrossPursuerEMA["Create Cross-Type Pursuer EMA Point"]
             SetCrossPursuerLocation["Set Location = Pursuer Point"]
-            CreateTypeEvaderERA["Create Type-Specific Evader ERA Point"]
+            CreateTypeEvaderEMA["Create Type-Specific Evader EMA Point"]
             SetTypeEvaderLocation["Set Location = Evader Point"]
-            CreateTypePursuerERA["Create Type-Specific Pursuer ERA Point"]
+            CreateTypePursuerEMA["Create Type-Specific Pursuer EMA Point"]
             SetTypePursuerLocation["Set Location = Pursuer Point"]
 
-            NewEvaderPoint --> CreateCrossEvaderERA
-            CreateCrossEvaderERA --> SetCrossEvaderLocation
-            NewPursuerPoint --> CreateCrossPursuerERA
-            CreateCrossPursuerERA --> SetCrossPursuerLocation
-            NewEvaderPoint --> CreateTypeEvaderERA
-            CreateTypeEvaderERA --> SetTypeEvaderLocation
-            NewPursuerPoint --> CreateTypePursuerERA
-            CreateTypePursuerERA --> SetTypePursuerLocation
+            NewEvaderPoint --> CreateCrossEvaderEMA
+            CreateCrossEvaderEMA --> SetCrossEvaderLocation
+            NewPursuerPoint --> CreateCrossPursuerEMA
+            CreateCrossPursuerEMA --> SetCrossPursuerLocation
+            NewEvaderPoint --> CreateTypeEvaderEMA
+            CreateTypeEvaderEMA --> SetTypeEvaderLocation
+            NewPursuerPoint --> CreateTypePursuerEMA
+            CreateTypePursuerEMA --> SetTypePursuerLocation
         end
 
         CrossTypeDB[(Cross-Type Database)]
@@ -84,7 +84,7 @@ graph TD;
 
 </div>
 
-# Cross-Type ERA Updates
+# Cross-Type EMA Updates
 
 <div align="center">
 
@@ -100,20 +100,20 @@ graph TD;
         TokenCheck -->|Yes| UpdateProcess
         TokenCheck -->|No| CreateProcess
 
-        subgraph "Cross-Type ERA Updates"
-            UpdateCrossEvaderERA["Update Cross-Type Evader ERA Point"]
+        subgraph "Cross-Type EMA Updates"
+            UpdateCrossEvaderEMA["Update Cross-Type Evader EMA Point"]
             SetCrossEvaderLocation["Set Location = (α × Previous Location) + (1-α × Evader Point)"]
-            UpdateCrossPursuerERA["Update Cross-Type Pursuer ERA Point"]
+            UpdateCrossPursuerEMA["Update Cross-Type Pursuer EMA Point"]
             SetCrossPursuerLocation["Set Location = (α × Previous Location) + (1-α × Pursuer Point)"]
 
-            UpdateProcess --> UpdateCrossEvaderERA & UpdateCrossPursuerERA
+            UpdateProcess --> UpdateCrossEvaderEMA & UpdateCrossPursuerEMA
             
-            UpdateCrossEvaderERA --> SetCrossEvaderLocation
-            UpdateCrossPursuerERA --> SetCrossPursuerLocation
+            UpdateCrossEvaderEMA --> SetCrossEvaderLocation
+            UpdateCrossPursuerEMA --> SetCrossPursuerLocation
         end
 
         subgraph "Other Updates"
-            TypeSpecificERA["Type-Specific ERA Updates"]
+            TypeSpecificERA["Type-Specific EMA Updates"]
             PursuerEvader["Pursuer Evader Point Updates"]
             
             UpdateProcess --> TypeSpecificERA
@@ -134,7 +134,7 @@ graph TD;
 
 </div>
 
-# Type-Specific ERA Updates
+# Type-Specific EMA Updates
 
 <div align="center">
 
@@ -150,20 +150,20 @@ graph TD;
         TokenCheck -->|Yes| UpdateProcess
         TokenCheck -->|No| CreateProcess
 
-        subgraph "Type-Specific ERA Updates"
-            UpdateTypeEvaderERA["Update Type-Specific Evader ERA Point"]
+        subgraph "Type-Specific EMA Updates"
+            UpdateTypeEvaderEMA["Update Type-Specific Evader EMA Point"]
             SetTypeEvaderLocation["Set Location = (α × Previous Location) + (1-α × Evader Point)"]
-            UpdateTypePursuerERA["Update Type-Specific Pursuer ERA Point"]
+            UpdateTypePursuerEMA["Update Type-Specific Pursuer EMA Point"]
             SetTypePursuerLocation["Set Location = (α × Previous Location) + (1-α × Pursuer Point)"]
 
-            UpdateProcess --> UpdateTypeEvaderERA & UpdateTypePursuerERA
+            UpdateProcess --> UpdateTypeEvaderEMA & UpdateTypePursuerEMA
             
-            UpdateTypeEvaderERA --> SetTypeEvaderLocation
-            UpdateTypePursuerERA --> SetTypePursuerLocation
+            UpdateTypeEvaderEMA --> SetTypeEvaderLocation
+            UpdateTypePursuerEMA --> SetTypePursuerLocation
         end
 
         subgraph "Other Updates"
-            CrossTypeERA["Cross-Type ERA Updates"]
+            CrossTypeERA["Cross-Type EMA Updates"]
             PursuerEvader["Pursuer Evader Point Updates"]
             UpdateProcess --> CrossTypeERA
             UpdateProcess --> PursuerEvader
@@ -203,16 +203,16 @@ graph TD;
             subgraph "Pursuer Point"
                 UpdatePursuerPoint["Update Pursuer Point"]
                 SetPursuerLocation["Set Location = Sum of:
-                1. Move Towards Cross-Type Evader ERA Point by Ratio r
-                2. Move Away from Type-Specific Evader ERA Point (inversely proportional to distance)"]
+                1. Move Towards Cross-Type Evader EMA Point by Ratio r
+                2. Move Away from Type-Specific Evader EMA Point (inversely proportional to distance)"]
                 UpdatePursuerPoint --> SetPursuerLocation
             end
 
             subgraph "Evader Point"
                 UpdateEvaderPoint["Update Evader Point"]
                 SetEvaderLocation["Set Location = Sum of:
-                1. Move Away from Cross-Type Pursuer ERA Point by Ratio r
-                2. Move Away from Type-Specific Pursuer ERA Point (inversely proportional to distance)"]
+                1. Move Away from Cross-Type Pursuer EMA Point by Ratio r
+                2. Move Away from Type-Specific Pursuer EMA Point (inversely proportional to distance)"]
                 UpdateEvaderPoint --> SetEvaderLocation
             end
 
@@ -220,10 +220,10 @@ graph TD;
         end
 
         subgraph "Other Updates"
-            CrossTypeERA["Cross-Type ERA Updates"]
-            TypeSpecificERA["Type-Specific ERA Updates"]
+            CrossTypeEMA["Cross-Type EMA Updates"]
+            TypeSpecificEMA["Type-Specific EMA Updates"]
             
-            UpdateProcess --> CrossTypeERA & TypeSpecificERA
+            UpdateProcess --> CrossTypeEMA & TypeSpecificEMA
         end
 
         TypeSpecificDB[(Type-Specific Database)]
@@ -231,8 +231,8 @@ graph TD;
         
         SetPursuerLocation -->|Store| TypeSpecificDB
         SetEvaderLocation -->|Store| TypeSpecificDB
-        CrossTypeERA -->|Store| CrossTypeDB
-        TypeSpecificERA -->|Store| TypeSpecificDB
+        CrossTypeEMA -->|Store| CrossTypeDB
+        TypeSpecificEMA -->|Store| TypeSpecificDB
     end
 
     ExternalSources --> TokenCheck
@@ -275,6 +275,63 @@ graph TD;
     GetPursuerPoint -->|Query| TypeSpecificDB
     FindNearestEvader -->|Query| TypeSpecificDB
     FormToken -->|Feed Back| InternalSources
+```
+
+</div>
+
+# Desirability and Undesirability Update Process
+
+<div align="center">
+
+```mermaid
+graph TD;
+    ExternalSources["External Token Sources"]
+    
+    subgraph "Token Ingestion Point"
+        TokenCheck{{"Token Type Exists?"}}
+        UpdateProcess["Update Process"]
+        CreateProcess["Create Process"]
+        
+        TokenCheck -->|Yes| UpdateProcess
+        TokenCheck -->|No| CreateProcess
+    end
+
+    subgraph "Desirability Score Updates"
+        GetPursuerPoint["Get Pursuer Point"]
+        FindNearestEvader["Find Nearest Different-Type Evader Point"]
+        SignalType{"Signal Type?"}
+        
+        UpdateProcess --> GetPursuerPoint
+        GetPursuerPoint --> FindNearestEvader
+        FindNearestEvader --> SignalType
+        
+        SelectScores["Select Scores:
+        1. Pursuer Type Score
+        2. Evader Type Score"]
+        
+        SignalType -->|Desirable| SelectScores
+        SignalType -->|Undesirable| SelectScores
+        
+        UpdatePursuerTypeScore["Update Pursuer Type Score:
+        1. Decay Current Score
+        2. Add New Signal"]
+        
+        UpdateEvaderTypeScore["Update Evader Type Score:
+        1. Decay Current Evader Score
+        2. Decay Updated Pursuer Score
+        3. Add Both Decayed Scores"]
+        
+        SelectScores --> UpdatePursuerTypeScore
+        UpdatePursuerTypeScore --> UpdateEvaderTypeScore
+    end
+
+    TypeSpecificDB[(Type-Specific Database)]
+    
+    ExternalSources --> TokenCheck
+    GetPursuerPoint -->|"Query Token Type<br/>(Point + Scores)"| TypeSpecificDB
+    FindNearestEvader -->|"Query Token Type<br/>(Point + Scores)"| TypeSpecificDB
+    UpdatePursuerTypeScore -->|Store Token Type| TypeSpecificDB
+    UpdateEvaderTypeScore -->|Store Token Type| TypeSpecificDB
 ```
 
 </div>
