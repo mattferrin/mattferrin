@@ -261,11 +261,17 @@ graph TD;
     subgraph "Token Formation Control"
         GetPursuerPoint["Get Pursuer Point"]
         FindNearestEvader["Find Nearest Different-Type Evader Point"]
+        ComplexityCheck{"Complexity Threshold?
+        (Bits/TimeSpan > μ + kσ)
+        where:
+        μ = Central EMA of complexity
+        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
         FormToken["Form Higher-Order Token from Evader and Pursuer Token Types"]
         
         UpdateProcess --> GetPursuerPoint
         GetPursuerPoint --> FindNearestEvader
-        FindNearestEvader --> FormToken
+        FindNearestEvader --> ComplexityCheck
+        ComplexityCheck -->|Exceeds| FormToken
     end
 
     TypeSpecificDB[(Type-Specific Database)]
@@ -299,18 +305,26 @@ graph TD;
     subgraph "Desirability Score Updates"
         GetPursuerPoint["Get Pursuer Point"]
         FindNearestEvader["Find Nearest Different-Type Evader Point"]
-        SignalType{"Signal Type?"}
+        DesirabilityCheck{"Desirability?"}
+        ControlState{"Control State?"}
         
         UpdateProcess --> GetPursuerPoint
         GetPursuerPoint --> FindNearestEvader
-        FindNearestEvader --> SignalType
+        FindNearestEvader --> DesirabilityCheck & ControlState
         
-        SelectScores["Select Scores:
-        1. Pursuer Type Score
-        2. Evader Type Score"]
+        SelectScores["Select Score Type to Update:
+        • Suppressed Desirability
+        • Uncontrolled Desirability
+        • Triggered Desirability
+        • Suppressed Undesirability
+        • Uncontrolled Undesirability
+        • Triggered Undesirability"]
         
-        SignalType -->|Desirable| SelectScores
-        SignalType -->|Undesirable| SelectScores
+        DesirabilityCheck -->|Desirable| SelectScores
+        DesirabilityCheck -->|Undesirable| SelectScores
+        ControlState -->|Suppressed| SelectScores
+        ControlState -->|Uncontrolled| SelectScores  
+        ControlState -->|Triggered| SelectScores
         
         UpdatePursuerTypeScore["Update Pursuer Type Score:
         1. Decay Current Score
