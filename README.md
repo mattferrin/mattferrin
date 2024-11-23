@@ -370,8 +370,18 @@ graph TD;
     subgraph "Token Instance Control"
         GetEvaderPoint["Get Evader Point"]
         FindNearestPursuer["Find Nearest Different-Type Pursuer Point"]
-        UndesirabilityCheck{"Pursuer Token Type Undesirability > Threshold?"}
-        DesirabilityCheck{"Pursuer Token Type Desirability > Threshold?"}
+        UndesirabilityCheck{"Pursuer Token Type Uncontrolled Undesirability > μ + kσ?
+        AND
+        Suppressed Undesirability < Uncontrolled Undesirability?
+        where:
+        μ = Central EMA of uncontrolled undesirability
+        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
+        DesirabilityCheck{"Pursuer Token Type Uncontrolled Desirability > μ + kσ?
+        AND
+        Triggered Desirability > Uncontrolled Desirability?
+        where:
+        μ = Central EMA of uncontrolled desirability
+        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
         SuppressToken["Suppress Token Instance Type of Pursuer"]
         TriggerToken["Trigger Token Instance Type of Pursuer"]
 
