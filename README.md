@@ -1,12 +1,57 @@
-# Token Instance Flow
+# Common Components
 
 <div align="center">
 
 ```mermaid
 graph TD;
+    subgraph "Utility Score Management"
+        UpdateUtilityScores["Update Point Utility Scores:
+        1. Increment Evader Point Score
+        2. Increment Pursuer Point Score
+        Note: All point scores halved globally on time interval"]
+    end
+```
+
+</div>
+
+# Common Statistical Definitions
+
+<div align="center">
+
+```mermaid
+graph TD;
+    subgraph "Adaptive Statistical Threshold Check (ASTC)"
+        direction TB
+        Input[/"Input Value"/]
+        Sensitivity[/"Sensitivity k"/]
+        ThresholdCheck{"Value > μ + kσ?"}
+        Formula["where:
+        μ = EMA of all values
+        σ = EMA(values > μ) - EMA(values < μ)"]
+        
+        ThresholdCheck --- Formula
+        Yes[/"Yes"/]
+        No[/"No"/]
+        
+        Input --> ThresholdCheck
+        Sensitivity --> ThresholdCheck
+        ThresholdCheck -->|Yes| Yes
+        ThresholdCheck -->|No| No
+    end
+```
+
+</div>
+
+# Token Instance Flow
+
+<div align="center">
+
+```mermaid
+graph LR;
     ExternalSources["External Token Sources"]
 
     subgraph "Token Instance Properties"
+        direction TB
         Triggerable["Triggerable"]
         NonTriggerable["Non-Triggerable"]
         Suppressible["Suppressible"]
@@ -261,11 +306,8 @@ graph TD;
     subgraph "Token Formation Control"
         GetPursuerPoint["Get Pursuer Point"]
         FindNearestEvader["Find Nearest Different-Type Evader Point"]
-        ComplexityCheck{"Complexity Threshold?
-        (Bits/TimeSpan > μ + kσ)
-        where:
-        μ = Central EMA of complexity
-        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
+        ComplexityCheck{"Adaptive Statistical Threshold Check (ASTC)
+        Input: Complexity (Bits/TimeSpan)"}
         FormToken["Form Higher-Order Token from Evader and Pursuer Token Types"]
         
         UpdateProcess --> GetPursuerPoint
@@ -274,12 +316,17 @@ graph TD;
         ComplexityCheck -->|Exceeds| FormToken
     end
 
+    UpdateUtilityScores["Utility Score Management"]
+    TokenInstanceControl --> UpdateUtilityScores
+    TokenInstanceControl["Token Instance Control"]
+    FormToken --> UpdateUtilityScores
+
     TypeSpecificDB[(Type-Specific Database)]
     
     ExternalSources --> TokenCheck
     InternalSources --> TokenCheck
-    GetPursuerPoint -->|Query| TypeSpecificDB
     FindNearestEvader -->|Query| TypeSpecificDB
+    GetPursuerPoint -->|Query| TypeSpecificDB
     FormToken -->|Feed Back| InternalSources
 ```
 
@@ -370,18 +417,13 @@ graph TD;
     subgraph "Token Instance Control"
         GetEvaderPoint["Get Evader Point"]
         FindNearestPursuer["Find Nearest Different-Type Pursuer Point"]
-        UndesirabilityCheck{"Pursuer Token Type Uncontrolled Undesirability > μ + kσ?
+        UndesirabilityCheck{"ASTC on Uncontrolled Undesirability
         AND
-        Suppressed Undesirability < Uncontrolled Undesirability?
-        where:
-        μ = Central EMA of uncontrolled undesirability
-        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
-        DesirabilityCheck{"Pursuer Token Type Uncontrolled Desirability > μ + kσ?
+        Suppressed Undesirability < Uncontrolled Undesirability"}
+        
+        DesirabilityCheck{"ASTC on Uncontrolled Desirability
         AND
-        Triggered Desirability > Uncontrolled Desirability?
-        where:
-        μ = Central EMA of uncontrolled desirability
-        σ = [(EMA above μ - μ) + (μ - EMA below μ)]"}
+        Triggered Desirability > Uncontrolled Desirability"}
         SuppressToken["Suppress Token Instance Type of Pursuer"]
         TriggerToken["Trigger Token Instance Type of Pursuer"]
 
@@ -393,6 +435,11 @@ graph TD;
         DesirabilityCheck -->|Yes| TriggerToken
     end
 
+    UpdateUtilityScores["Utility Score Management"]
+    InternalFormation["Internal Token Formation Process"] --> UpdateUtilityScores
+    SuppressToken --> UpdateUtilityScores
+    TriggerToken --> UpdateUtilityScores
+
     TypeSpecificDB[(Type-Specific Database)]
     
     ExternalSources --> TokenCheck
@@ -400,6 +447,58 @@ graph TD;
     FindNearestPursuer -->|Query| TypeSpecificDB
     SuppressToken -->|Feedback| ExternalSources
     TriggerToken -->|Feedback| ExternalSources
+```
+
+</div>
+
+# Point Management Process
+
+<div align="center">
+
+```mermaid
+graph TD;
+    ExternalSources["External Token Sources"]
+    
+    subgraph "Token Ingestion Point"
+        TokenCheck{{"Token Type Exists?"}}
+        UpdateProcess["Update Process"]
+        CreateProcess["Create Process"]
+        
+        TokenCheck -->|Yes| UpdateProcess
+        TokenCheck -->|No| CreateProcess
+    end
+
+    subgraph "Point Management"
+        FindLowestUtility["Find Point with Lowest Utility Score for Token Type"]
+        
+        CreateNewPoint["Create New Point:
+        1. Get EMA Point Location for Same Token Type and Point Type
+        2. Project Through Sphere Center to Opposite Side"]
+        
+        DeletePoint["Delete Single Point with Lowest Utility"]
+
+        UtilityCheck{"High Adaptive Statistical Threshold Check (ASTC)
+        Input: Utility
+        k: k₁ ∈ (0,1) for creation"}
+        
+        LowUtilityCheck{"Low Adaptive Statistical Threshold Check (ASTC)
+        Input: Utility
+        k: k₂ ∈ (0,1) for deletion
+        Note: k₂ < k₁"}
+
+        UpdateProcess --> FindLowestUtility
+        FindLowestUtility --> UtilityCheck
+        UtilityCheck -->|Yes| CreateNewPoint
+        UtilityCheck -->|No| LowUtilityCheck
+        LowUtilityCheck -->|Yes| DeletePoint
+    end
+
+    TypeSpecificDB[(Type-Specific Database)]
+    
+    ExternalSources --> TokenCheck
+    FindLowestUtility -->|Query| TypeSpecificDB
+    CreateNewPoint -->|Store| TypeSpecificDB
+    DeletePoint -->|Remove| TypeSpecificDB
 ```
 
 </div>
